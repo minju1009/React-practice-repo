@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import './DiaryEditor.scss';
 
-const DiaryEditor = () => {
+const DiaryEditor = ({ onCreate }) => {
   const authorInput = useRef();
   const contentInput = useRef();
   const [state, setState] = useState({
@@ -28,8 +28,11 @@ const DiaryEditor = () => {
       return;
     }
 
-    console.log(state);
+    onCreate(state.author, state.content, state.score);
     alert('저장 완료!👍');
+    state.author = '';
+    state.content = '';
+    state.score = '1';
   };
 
   return (

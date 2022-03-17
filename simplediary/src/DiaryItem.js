@@ -1,4 +1,4 @@
-const DiaryItem = ({ id, author, content, score, created_date }) => {
+const DiaryItem = ({ id, author, content, score, created_date, onDelete }) => {
   return (
     <div className="DiaryItem">
       <div className="Info">
@@ -8,6 +8,13 @@ const DiaryItem = ({ id, author, content, score, created_date }) => {
         <span className="date">{new Date(created_date).toLocaleString()}</span>
       </div>
       <div className="content">{content}</div>
+      <button
+        onClick={() => {
+          onDelete(id);
+        }}
+      >
+        삭제하기
+      </button>
     </div>
   );
 };
