@@ -31,6 +31,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: ${({ theme }) => theme.bgColor};
+	color: ${({ theme }) => theme.textColor};
 }
 ol, ul {
 	list-style: none;
@@ -52,6 +54,7 @@ body{
 }
 a{
   text-decoration: none;
+  color:inherit;
 }
 *{
   box-sizing: border-box;
