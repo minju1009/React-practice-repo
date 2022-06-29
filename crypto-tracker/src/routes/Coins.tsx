@@ -11,6 +11,15 @@ interface CoinInterface {
   is_active: boolean;
   type: string;
 }
+interface CoinInterface {
+  id: string;
+  name: string;
+  symbol: string;
+  rank: number;
+  is_new: boolean;
+  is_active: boolean;
+  type: string;
+}
 
 function Coins() {
   const [coins, setCoins] = useState<CoinInterface[]>([]);
